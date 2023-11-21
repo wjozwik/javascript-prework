@@ -29,3 +29,21 @@ if(playerInput == '1'){
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if(computerMove == 'kamień' && playerMove == 'papier'){
+    printMessage('Ty wygrywasz!');
+} else if(computerMove == 'kamień' && playerMove == 'nożyce'){
+    printMessage('Przegrywasz...');
+} else if(computerMove == 'papier' && playerMove == 'kamień'){
+    printMessage('Przegrywasz...');
+} else if(computerMove == 'papier' && playerMove == 'nożyce'){
+    printMessage('Ty wygrywasz!');
+} else if(computerMove == 'nożyce' && playerMove == 'kamień'){
+    printMessage('Ty wygrywasz!');
+} else if(computerMove == 'nożyce' && playerMove == 'papier'){
+    printMessage('Przegrywasz...');
+} else if(computerMove == playerMove){
+    printMessage('Remis ;)');
+} else {
+    printMessage('ODŚWIEŻ STRONĘ I WPISZ WYBRANĄ LICZBĘ O WARTOŚCI: 1, 2 LUB 3 !!!');
+}

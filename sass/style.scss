@@ -1,0 +1,38 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // border: 1px solid black;
+}
+
+body {
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+#buttons {
+    padding: 40px 0;
+
+    button {
+        background: #000;
+        color: #fff;
+        font-family: 'Montserrat';
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        padding: 16px 28px;
+        margin: 0 10px;
+        i {
+            font-size: 48px;
+            padding-bottom: 10px;
+        }
+    }
+
+    button:hover {
+        color: yellowgreen;
+    }
+}
+
+
+
+

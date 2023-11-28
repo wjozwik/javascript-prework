@@ -59,6 +59,7 @@
     printContent('Wynik', 'result')
     printContent(playerScore + " - " + computerScore, 'result');
     console.log('computerScore: ' + computerScore + " - playerScore: " + playerScore);
+    gameEnd(computerScore, playerScore);
   }
 
   document.getElementById('play-rock').addEventListener('click', function(){
@@ -75,5 +76,17 @@
 
   let computerScore = 0;
   let playerScore = 0;
+
+  const gameEnd = function (argComputerScore, argPlayerScore){
+    if(argComputerScore == 3){
+      printContent('PRZEGRANA', 'end');
+      clearContent('messages');
+      clearContent('buttons');
+    } else if(argPlayerScore == 3){
+      printContent('WYGRANA', 'end');
+      clearContent('messages');
+      clearContent('buttons');
+    }
+  }
 }
 

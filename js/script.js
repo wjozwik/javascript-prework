@@ -19,8 +19,6 @@
     
     const computerMove = getMoveName(randomNumber);
 
-    // const playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-
     console.log('Gracz wpisał: ' + playerInput);
 
     const playerMove = getMoveName(playerInput);
@@ -62,30 +60,56 @@
     gameEnd(computerScore, playerScore);
   }
 
+  const hideElement = function (elementId){
+    document.getElementById(elementId).classList.add('invisible');
+  };
+
+  const unHideElement = function (elementId){
+    document.getElementById(elementId).classList.remove('invisible');
+  };
+
   document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
+    unHideElement('messages');
   });
 
   document.getElementById('play-paper').addEventListener('click', function(){
     playGame(2);
+    unHideElement('messages');
   });
 
   document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
+    unHideElement('messages');
   });
 
+  const gameRefresher = function () {
+    document.getElementById('refresher').addEventListener('click', function() {
+      location.reload();
+    });
+  };
+  
+  gameRefresher();
+  
   let computerScore = 0;
   let playerScore = 0;
 
+  const buttonsReplacement = function () {
+    hideElement('play-rock');
+    hideElement('play-paper');
+    hideElement('play-scissors');
+    unHideElement('refresher');
+  };
+
   const gameEnd = function (argComputerScore, argPlayerScore){
     if(argComputerScore == 3){
-      printContent('PRZEGRANA', 'end');
       clearContent('messages');
-      clearContent('buttons');
+      printContent('<span>PRZEGRANA</span>', 'messages');
+      buttonsReplacement();
     } else if(argPlayerScore == 3){
-      printContent('WYGRANA', 'end');
       clearContent('messages');
-      clearContent('buttons');
+      printContent('<span>WYGRANA</span>', 'messages');
+      buttonsReplacement();
     }
   }
 }
